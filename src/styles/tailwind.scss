@@ -2,10 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn {
-    @apply py-2 px-4 rounded;
+.header {
+  @apply flex items-center  flex-wrap  border-b-2 border-gray-200 py-6 lg:px-8;
 }
 
-.btn-blue {
-    @apply bg-blue-500 text-danger;
+.content-menu {
+  @apply block lg:hidden;
+}
+
+.button-menu {
+  @apply flex items-center px-3 relative;
+}
+
+.icon-menu {
+  @apply fill-current h-5 w-5;
+}
+
+.content-logo {
+  @apply flex justify-center;
+}
+
+.logo {
+  @apply lg:ml-4;
+}
+
+.container-menu-items {
+  @apply w-full block flex-grow lg:flex lg:items-center lg:justify-end lg:w-auto;
+}
+
+.content-menu-items {
+  @apply text-sm text-jungle-green ml-6;
+}
+
+.items {
+  @apply block mt-4 lg:inline-block lg:mt-0 mr-4;
+}
+
+.content-menu-item-icon {
+  @apply lg:inline-block relative hidden -m-2;
+}
+
+.circle-div-menu{
+  @apply rounded-full h-3 w-3 bg-caribbean-green absolute bottom-3 left-6;
+}
+
+.circle-div-item {
+  @apply rounded-full h-3 w-3 bg-caribbean-green absolute bottom-2 left-4;
 }
