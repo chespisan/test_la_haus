@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import './ItemRealEstate.scss'
+import Imgs from '../../assets/real1.jpg'
+import 'components/item-real-estate/ItemRealEstate.scss'
 
 const ItemRealEstate = ({ itemsRealEstate }: any) => {
   const [sizeRealEstates, setRealEstates] = useState('')
@@ -15,11 +16,12 @@ const ItemRealEstate = ({ itemsRealEstate }: any) => {
 
   return (
     <>
-      <div className="container-home  w-11/12">
+      <div className="container-item-real-estate  w-10/12">
         <div className={`content-image  h-48  ${sizeRealEstates}-image`}>
           {itemsRealEstate.map((estate: any, index: number) => (
             <>
               <img
+                key={estate.id}
                 className={index > 2 ? 'hidden' : ''}
                 src={estate.attributes.gallery_urls[0]}
                 alt={estate.attributes.name}

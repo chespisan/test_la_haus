@@ -1,14 +1,12 @@
 import React from 'react'
-import ItemRealEstate from '../item-real-estate/ItemRealEstate'
+import ItemRealEstate from 'components/item-real-estate/ItemRealEstate'
 
-const CardRealState = ({ realEstates }: any) => {
+const CardRealEstate = ({ realEstates }: any) => {
   return (
     <>
       <ItemRealEstate itemsRealEstate={realEstates.attributes.real_estates} />
-      <h1 className="ml-5 my-2 text-lg  text-left">
-        {realEstates.attributes.name}
-      </h1>
-      <p className="ml-5 my-2 text-sm  text-green-gray text-left">
+      <p className="title-card-real-estate">{realEstates.attributes.name}</p>
+      <p className="subtitle-card-real-estate">
         {realEstates.attributes.real_estates.length}{' '}
         {realEstates.attributes.real_estates.length === 1
           ? 'propiedad guardada'
@@ -18,4 +16,4 @@ const CardRealState = ({ realEstates }: any) => {
   )
 }
 
-export default CardRealState
+export default CardRealEstate

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import CardRealState from '../../components/card-real-estate/CardRealState'
-import Header from '../../components/header/Header'
-import { getRealEstatesService } from '../../services/real-estates/realEstates.service'
-import './Home.scss'
+import Helmet from 'react-helmet'
+import CardRealEstate from 'components/card-real-estate/CardRealEstate'
+import Header from 'components/header/Header'
+import { getRealEstatesService } from 'services/real-estates/realEstates.service'
 
 const Home: React.FC = () => {
   const [dataRealEstate, setDataRealState] = useState<any>([])
@@ -18,25 +18,31 @@ const Home: React.FC = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          La Haus más que una inmobiliaria ¡Compra finca raíz a tu ritmo!
+        </title>
+        <meta
+          name="description"
+          content="¿Buscas una inmobiliaria? Tenemos una buena noticia, somos mucho más. La tecnología y oferta de finca raíz harán más fácil la compra de tu vivienda nueva."
+        />
+      </Helmet>
       <Header />
-      <div className="container mx-auto mt-5 text-center">
-        <h1 className="font-semibold text-jungle-green  text-3xl  lg:text-4xl  m-10  lg:m-16">
-          Listas de favoritos
-        </h1>
+      <div className="container-home">
+        <h1 className="title-home">Listas de favoritos</h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-2">
+        <div className="container-card-real-estate">
           {dataRealEstate.map((realStates: any) => (
-            <div className="my-2">
-              <CardRealState realEstates={realStates} />
+            <div className="my-2" key={realStates.id}>
+              <CardRealEstate realEstates={realStates} />
             </div>
           ))}
-          <div className="flex-col my-2">
-            <div className="bg-md-blue border-solid flex items-center justify-center mx-auto h-48 rounded-2xl w-11/12">
-              <i className="text-sky-blue  text-6xl fas fa-plus"></i>
+
+          <div className="container-new-card">
+            <div className="content-new-card">
+              <i className="icon-new-card  fas fa-plus"></i>
             </div>
-            <h2 className="my-2 text-lg  text-center text-sky-blue">
-              Crea una nueva lista
-            </h2>
+            <h2 className="title-new-card">Crea una nueva lista</h2>
           </div>
         </div>
       </div>

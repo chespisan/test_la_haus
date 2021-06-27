@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import Logo from '../../assets/logo.png'
+import Logo from 'assets/logo.png'
+import LogoMobile from '../../assets/favicon.ico'
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState<boolean>(true)
@@ -23,11 +24,18 @@ const Header = () => {
       </div>
 
       <div className="content-logo">
-        <img className="logo" src={Logo} alt="" width="100" height="100" />
+        <img className="logo" src={Logo} alt="logo" width="40%" height="100" />
+        <img
+          className="logo-mobile"
+          src={LogoMobile}
+          alt="logo"
+          width="30"
+          height="30"
+        />
       </div>
 
       <div
-        className={`w-full block flex-grow lg:flex lg:items-center lg:justify-end lg:w-auto ${
+        className={`w-full -mb-3 block flex-grow lg:flex lg:items-center lg:justify-end w-auto lg:min-w-0 ${
           showMenu ? 'hidden' : ''
         }`}
       >
