@@ -10,7 +10,7 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
     alias: {
       routes: path.resolve(__dirname, 'src/routes'),
       components: path.resolve(__dirname, 'src/components'),
@@ -50,8 +50,11 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg)$/,
-        type: 'assets'
+        test: /\.(png|jpe?g|gif|jp2|webp)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+        },
       },
       {
         test: /\.(tsx|ts)$/,
