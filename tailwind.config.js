@@ -2,6 +2,9 @@ module.exports = {
   purge: [],
   darkMode: false,
   theme: {
+    fontFamily: {
+      silka: ['silka']
+    },
     extend: {
       colors: {
         'caribbean-green': '#3ECFAF',

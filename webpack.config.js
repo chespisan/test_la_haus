@@ -1,6 +1,11 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CSSMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
 
 module.exports = {
   entry: './src/index.tsx',
@@ -23,11 +28,6 @@ module.exports = {
 
     }
   },
-  performance: {
-    hints: false,
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000
-  },
   module: {
     rules: [
       {
@@ -43,17 +43,10 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader
-          },
-          'css-loader',
-          'sass-loader',
-          'postcss-loader'
-        ]
+        use: [{ loader: MiniCssExtractPlugin.loader }, 'css-loader', 'sass-loader', 'postcss-loader']
       },
       {
-        test: /\.(png|jpg|gif|jp2|webp|ico)$/,
+        test: /\.(png|jpe?g|gif|jp2|webp)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
@@ -73,17 +66,41 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'assets/[name].css'
-    })
+    }),
+    new CleanWebpackPlugin()
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: false,
     historyApiFallback: true,
-    port: 3005,
   },
   optimization: {
+    minimize: true,
+    minimizer: [
+      new CSSMinimizerPlugin(),
+      new TerserPlugin()
+    ],
     splitChunks: {
-      chunks: 'all'
+      chunks: 'all',
+      cacheGroups: {
+        default: false,
+        commons: {
+          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+          chunks: 'all',
+          name: 'commons',
+          filename: 'assets/common.[chunkhash].js',
+          reuseExistingChunk: true,
+          enforce: true,
+          priority: 20
+        },
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          chunks: 'all',
+          name: 'vendors',
+          filename: 'assets/vendor.[chunkhash].js',
+          reuseExistingChunk: true,
+          enforce: true,
+          priority: 10
+        }
+      }
     }
   }
 }
