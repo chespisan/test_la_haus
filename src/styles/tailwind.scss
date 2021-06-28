@@ -10,7 +10,7 @@ html {
 }
 
 .header {
-  @apply flex items-center  flex-wrap  lg:flex-nowrap  border-b-2 border-gray-200 py-3 lg:py-6 lg:px-20;
+  @apply flex items-center  flex-wrap  lg:flex-nowrap  border-b-2 border-gray-200 py-3 lg:py-4 lg:px-20;
 }
 
 .content-menu {
@@ -62,7 +62,7 @@ html {
 }
 
 .container-home {
-  @apply container mx-auto mt-20  lg:m-40 text-center;
+  @apply container mx-auto mt-20  lg:mt-40 text-center;
 }
 
 .title-home {
