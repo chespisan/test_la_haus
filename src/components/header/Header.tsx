@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Logo from 'assets/logo.png'
-import LogoMobile from '../../assets/favicon.ico'
+import LogoMobile from 'assets/favicon.ico'
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState<boolean>(true)
