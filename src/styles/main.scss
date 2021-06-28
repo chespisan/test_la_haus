@@ -32997,6 +32997,8 @@ html {
 }
 
 .content-menu-items {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   margin-left: 1.5rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -33033,7 +33035,7 @@ html {
   }
 }
 
-.circle-div-menu{
+.circle-div-menu {
   position: absolute;
   bottom: 0.75rem;
   left: 1.5rem;
@@ -33092,8 +33094,14 @@ html {
 .container-home{
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1.25rem;
+  margin-top: 5rem;
   text-align: center;
+}
+
+@media (min-width: 1024px){
+  .container-home{
+    margin: 8rem;
+  }
 }
 
 .title-home {
@@ -33145,7 +33153,7 @@ html {
   margin-right: auto;
   display: flex;
   height: 12rem;
-  width: 91.666667%;
+  width: 83.333333%;
   align-items: center;
   justify-content: center;
   border-radius: 1rem;

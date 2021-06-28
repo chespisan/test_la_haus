@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "Test La Haus",
   "main": "index.js",
-  "homepage": "./",
   "scripts": {
     "start": "npm run watch:scss && webpack serve --open development --config webpack.config.dev.js",
     "build": "npm run build:scss &&  webpack --mode production --config webpack.config.js",

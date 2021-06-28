@@ -8,7 +8,7 @@ const Header = () => {
   const handleShowMenu = () => setShowMenu(!showMenu)
 
   return (
-    <nav className="header">
+    <nav className={`header  bg-white absolute top-0 w-full z-10`}>
       <div className="content-menu">
         <button onClick={handleShowMenu} className="button-menu">
           <div className="circle-div-menu"></div>

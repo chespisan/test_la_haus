@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CSSMinimizerPlugin = require('css-minimizer-webpack-plugin')
@@ -9,10 +8,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   entry: './src/index.tsx',
+  mode: "production",
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    publicPath: '/'
+    chunkFilename: '[name].bundle.js'
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
@@ -24,8 +24,7 @@ module.exports = {
       styles: path.resolve(__dirname, 'src/styles'),
       assets: path.resolve(__dirname, 'src/assets'),
       public: path.resolve(__dirname, 'public'),
-      interfaces: path.resolve(__dirname, 'src/interfaces'),
-
+      interfaces: path.resolve(__dirname, 'src/interfaces')
     }
   },
   module: {

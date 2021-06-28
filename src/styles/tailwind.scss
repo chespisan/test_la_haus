@@ -30,7 +30,7 @@ html {
 }
 
 .logo {
-  @apply hidden lg:block ;
+  @apply hidden lg:block;
 }
 
 .logo-mobile {
@@ -42,7 +42,7 @@ html {
 }
 
 .content-menu-items {
-  @apply text-sm text-jungle-green ml-6;
+  @apply text-sm text-jungle-green ml-6 my-6;
 }
 
 .items {
@@ -53,7 +53,7 @@ html {
   @apply lg:inline-block relative hidden -m-2;
 }
 
-.circle-div-menu{
+.circle-div-menu {
   @apply rounded-full h-3 w-3 bg-caribbean-green absolute bottom-3 left-6;
 }
 
@@ -62,7 +62,7 @@ html {
 }
 
 .container-home {
-  @apply container mx-auto mt-5 text-center;
+  @apply container mx-auto mt-20  lg:m-40 text-center;
 }
 
 .title-home {
@@ -78,7 +78,7 @@ html {
 }
 
 .content-new-card {
-  @apply bg-md-blue border-solid flex items-center justify-center mx-auto h-48 rounded-2xl w-11/12;
+  @apply bg-md-blue border-solid flex items-center justify-center mx-auto h-48 rounded-2xl w-10/12;
 }
 
 .icon-new-card {
