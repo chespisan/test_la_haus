@@ -2,7 +2,7 @@
 
 Este es un test de La Haus, desarrollado en [ReactJS](https://reactjs.org/)
 
-[Demo La haus](https://test-la-haus.s3.amazonaws.com/index.html)
+[Demo La haus](https://lahaus.sergiosanchezdeveloper.com/)
 
 ## Información
 
@@ -15,7 +15,11 @@ Este es un test de La Haus, desarrollado en [ReactJS](https://reactjs.org/)
 - Jest
 
 ### Proveedor cloud
-- Amazon S3
+- Amazon S3 (Dist)
+- CodePipeline & CodeBuild (CI/CD)
+- Lambda (Invalidation distribution)
+- Route 53 (Domain)
+- CloudFormation (Distribution)
 
 ## Versiones Lib
 
