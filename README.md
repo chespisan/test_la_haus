@@ -2,7 +2,7 @@
 
 Este es un test de La Haus, desarrollado en [ReactJS](https://reactjs.org/)
 
-[Demo La haus](https://lahaus.sergiosanchezdeveloper.com/)
+[Demo La Haus](https://lahaus.sergiosanchezdeveloper.com/)
 
 ## Información
 
@@ -19,7 +19,7 @@ Este es un test de La Haus, desarrollado en [ReactJS](https://reactjs.org/)
 - CodePipeline & CodeBuild (CI/CD)
 - Lambda (Invalidation distribution)
 - Route 53 (Domain)
-- CloudFormation (Distribution)
+- CloudFront (Distribution)
 
 ## Versiones Lib
 
