@@ -42,7 +42,7 @@ const Home: React.FC = () => {
             <div className="content-new-card">
               <i className="icon-new-card  fas fa-plus"></i>
             </div>
-            <h2 className="title-new-card">Crea una nueva mega lista</h2>
+            <h2 className="title-new-card">Crea una nueva lista</h2>
           </div>
         </div>
       </div>
