@@ -17,7 +17,7 @@ const ItemRealEstate = ({ itemsRealEstate }: any) => {
   return (
     <>
       <div className="container-item-real-estate  w-10/12">
-        <div className={`content-image  h-48  ${sizeRealEstates}-image`}>
+        <div className={`content-image  h-56  ${sizeRealEstates}-image`}>
           {itemsRealEstate.map((estate: any, index: number) => (
             <>
               <img
@@ -29,7 +29,7 @@ const ItemRealEstate = ({ itemsRealEstate }: any) => {
                 height="100%"
               />
               {index === 2 && (
-                <h1 className="text-white font-bold mr-6 my-auto z-10">
+                <h1 className="text-white font-bold mr-6  sm:mr-3 md:mr-4 lg:mr-7 my-auto z-10">
                   +{itemsRealEstate.length - index}
                 </h1>
               )}
